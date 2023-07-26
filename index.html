@@ -6,6 +6,18 @@
     <title>Document</title>
 </head>
 <body>
+    <div id="datos"></div>
+    <script>
+        let texto = ''
+        alert("Hola")
+        fetch("https://rickandmortyapi.com/api/character/27")
+        .then(cabecera => cabecera.json())
+        .then(datos => {
+            console.log(datos.name);
+            texto += 'nombre: '+datos.name+' imagen: <img src="'+datos.image+'">';
+            document.querySelector("#datos").innerHTML = texto
+        })
+    </script>
     
 </body>
 </html>
